@@ -1,4 +1,3 @@
-/* Estilos gerais */
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +13,6 @@ body {
     overflow: hidden;
 }
 
-/* Estilos do Header */
 header {
     position: absolute;
     width: 50vw;
@@ -28,7 +26,7 @@ header {
 }
 
 header .logo {
-    width: 250px; /* Ajuste o tamanho da logo aqui */
+    width: 250px;
 }
 
 header nav ul {
@@ -37,152 +35,138 @@ header nav ul {
 }
 
 header nav .nav-imagem {
-    width: 350px; /* Ajuste o tamanho da imagem na navegação aqui */
-    height: auto; /* Mantém a proporção da imagem */
-    
+    width: 350px;
+    height: auto;
 }
 
-/* Estilos da seção */
 section {
     background-image: radial-gradient(#2d064a, #222222);
-    height: 100vh; /* Mantém a seção ocupando toda a altura */
+    height: 100vh;
     position: relative;
 }
 
-/* Estilo da lista */
 .list {
     width: 70vw;
     height: 100%;
     margin: auto;
     display: flex;
     flex-direction: column;
-    gap: 40px; /* Espaçamento entre os itens */
+    gap: 40px;
     --calculation: 1;
 }
 
-/* Itens */
 .item {
-    display: flex; /* Flexbox para alinhar imagem e descrição */
-    flex-direction: row; /* Alinhamento horizontal */
-    gap: 20px; /* Espaçamento entre a imagem e o conteúdo */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateX(calc(100vw * var(--calculation))); /* Fora da tela */
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    opacity: 0;
+    transform: translateX(calc(100vw * var(--calculation)));
     transition: opacity 0.5s ease, transform 0.5s ease;
     position: relative;
     height: auto;
 }
 
 .item.active {
-    opacity: 1; /* Fica visível quando ativa */
-    transform: translateX(0); /* Volta para sua posição original */
-}
-.item.active .content {
-    opacity: 1; /* Fica visível quando o item estiver ativo */
-    transform: translateY(0); /* Retorna à posição original */
-}
-/* Estilo específico para cada item */
-.camilla, .facial, .preenchimento {
-    display: flex; /* Flexbox para alinhar a imagem com o conteúdo */
-    align-items: center; /* Alinha verticalmente ao centro */
-    /* width: 100%; */ /* Garantir que ocupa a largura total */
+    opacity: 1;
+    transform: translateX(0);
 }
 
-/* Ajuste para as imagens */
+.item.active .content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.camilla, .facial, .preenchimento {
+    display: flex;
+    align-items: center;
+}
+
 .camilla {
-    display: flex; /* Flexbox para alinhar a imagem com o conteúdo */
-    align-items: center; /* Alinha verticalmente ao centro */
     top: 20%;
     left: 80px;
 }
+
 .facial {
-    display: flex; /* Flexbox para alinhar a imagem com o conteúdo */
-    align-items: center; /* Alinha verticalmente ao centro */
     top: -40%;
     left: 30px;
 }
+
 .preenchimento {
-    display: flex; /* Flexbox para alinhar a imagem com o conteúdo */
-    align-items: center; /* Alinha verticalmente ao centro */
     top: -95%;
     left: 5px;
 }
 
 .camilla img {
-    width: 300px; /* Tamanho específico para Camilla */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(200px); /* Deslocamento para baixo */
+    width: 300px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(200px);
 }
 
 .facial img {
-    width: 350px; /* Tamanho específico para Facial */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(200px); /* Deslocamento para baixo */
+    width: 350px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(200px);
 }
 
 .preenchimento img {
-    width: 400px; /* Tamanho específico para Preenchimento */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(200px); /* Deslocamento para baixo */
+    width: 400px;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translateY(200px);
 }
 
-/* Mostrar as imagens quando o item estiver ativo */
 .item.active .camilla img,
 .item.active .facial img,
 .item.active .preenchimento img {
-    opacity: 1; /* Imagem visível */
-    transform: translateY(0); /* Retorna para a posição normal */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Estilos para o conteúdo */
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 600px; /* Limita a largura */
-    opacity: 0; /* Inicialmente invisível */
-    transform: translateY(calc(20px * var(--calculation))); /* Leve deslocamento */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
-    z-index: 5; /* Coloca o conteúdo acima de outros elementos */
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(calc(20px * var(--calculation)));
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 5;
 }
 
-/* Ativar o conteúdo */
 .item.active .content {
-    opacity: 1; /* Fica visível quando o item estiver ativo */
-    transform: translateY(0); /* Retorna à posição original */
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Ajustes para o título e descrição */
 .content h2 {
     font-family: sans-serif;
     font-size: 2.5em;
     color: #beff1b;
-    opacity: 0; /* Invisível inicialmente */
+    opacity: 0;
     transition: opacity 0.5s;
-    transition-delay: 0.3s; /* Título aparece primeiro com 0.3s de atraso */
+    transition-delay: 0.3s;
 }
 
 .item.active .content h2 {
-    opacity: 1; /* Fica visível quando ativo */
+    opacity: 1;
 }
 
 .content p.description {
     font-size: 1em;
     line-height: 1.5;
     color: #fff;
-    opacity: 0; /* Invisível inicialmente */
+    opacity: 0;
     transition: opacity 0.5s;
-    transition-delay: 0.8s; /* Descrição aparece depois com 0.8s de atraso */
+    transition-delay: 0.8s;
 }
 
 .item.active .content p.description {
-    opacity: 1; /* Fica visível quando ativo */
+    opacity: 1;
 }
 
-/* Ajustes para os arrows */
 .arrows {
     width: 70vw;
     position: absolute;
@@ -191,7 +175,7 @@ section {
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: space-between;
-    z-index: 10; /* Garantir que as setas estejam acima de tudo */
+    z-index: 10;
 }
 
 .arrows button {
@@ -202,23 +186,21 @@ section {
     background-color: #981bff;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    z-index: 10; /* Certifique-se de que os botões não fiquem atrás de outros elementos */
+    z-index: 10;
 }
 
-/* Estilo para a imagem fixa no canto */
 .imagem-fixa {
-    position: fixed; /* Fixa a imagem na tela */
-    bottom: 15px; /* Distância do fundo */
-    right: 20px; /* Distância da direita */
-    z-index: 1000; /* Garante que a imagem fique acima de outros elementos */
-    width: 100px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    border-radius: 30px; /* Cantos arredondados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para um efeito de profundidade */
-    transition: transform 0.3s; /* Transição suave para transformações */
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    z-index: 1000;
+    width: 100px;
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
 }
 
-/* Adicionando a animação */
 @keyframes pulsar {
     0% {
         transform: scale(1);
@@ -232,12 +214,11 @@ section {
 }
 
 .imagem-fixa {
-    animation: pulsar 1.5s infinite; /* Aplica a animação */
+    animation: pulsar 1.5s infinite;
 }
 
-/* Efeito de hover */
 .imagem-fixa:hover {
-    transform: scale(1.05); /* Aumenta a imagem ao passar o mouse */
+    transform: scale(1.05);
 }
 
 .arrows button img {
@@ -249,10 +230,9 @@ section {
 }
 
 .arrows button:nth-child(1) img {
-    transform: scale(-1); /* Inverte a seta esquerda */
+    transform: scale(-1);
 }
 
-/* Indicadores */
 .indicators {
     position: absolute;
     bottom: 10%;
