@@ -83,16 +83,16 @@ section {
 
 .camilla {
     top: 20%;
-    left: 80px;
+    left: 50px;
 }
 
 .facial {
-    top: -40%;
+    top: -60%;
     left: 30px;
 }
 
 .preenchimento {
-    top: -95%;
+    top: -125%;
     left: 5px;
 }
 
@@ -168,7 +168,7 @@ section {
 }
 
 .arrows {
-    width: 70vw;
+    width: 90vw;
     position: absolute;
     top: 50%;
     left: 50%;
