@@ -8,7 +8,6 @@ let dots = indicator.querySelectorAll('ul li');
 let active = 0;
 let lastPosition = items.length - 1;
 
-// Função para atualizar o item ativo
 function updateItem(newActive) {
     let itemOld = container.querySelector('.item.active');
     let dotOld = indicator.querySelector('li.active');
@@ -19,20 +18,17 @@ function updateItem(newActive) {
     items[newActive].classList.add('active');
     dots[newActive].classList.add('active');
 
-    // Atualiza a propriedade CSS --calculation
-    container.style.setProperty('--calculation', newActive < active ? -1 : 1); // Define -1 se for para a esquerda, 1 se for para a direita
+    container.style.setProperty('--calculation', newActive < active ? -1 : 1);
 
-    active = newActive; // Atualiza o índice ativo
+    active = newActive;
 }
 
-// Evento de clique para o botão "anterior"
 prevButton.onclick = () => {
-    const newActive = active === 0 ? lastPosition : active - 1; // Atualiza o índice ativo
-    updateItem(newActive); // Chama a função para atualizar o item
+    const newActive = active === 0 ? lastPosition : active - 1;
+    updateItem(newActive);
 };
 
-// Evento de clique para o botão "próximo"
 nextButton.onclick = () => {
-    const newActive = active === lastPosition ? 0 : active + 1; // Atualiza o índice ativo
-    updateItem(newActive); // Chama a função para atualizar o item
+    const newActive = active === lastPosition ? 0 : active + 1;
+    updateItem(newActive);
 };
